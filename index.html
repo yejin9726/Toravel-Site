@@ -16,6 +16,10 @@
 <style>
 :root{--brand:#173F45;--point:#EF806C;--ink:#1A1A1A;--gray:#8E8E8E;--line:#EDEDED;--soft:#F4F4F4;--star:#F5B100}
 body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.55;letter-spacing:-.01em}
+@media (hover:hover) and (pointer:fine){
+  html,body{cursor:url("assets/images/toravel-cursor.svg") 16 16,auto}
+  a,button,label,input,select,[role="button"]{cursor:url("assets/images/toravel-cursor.svg") 16 16,pointer}
+}
 .in{max-width:1200px;margin:0 auto;padding:0 20px}
 /* 헤더 */
 .hd{height:92px;background:#fff;position:sticky;top:0;z-index:20}
@@ -54,7 +58,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .rv{border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px}
 .rv .who{display:flex;gap:10px;align-items:center}
-.rv .who i{width:36px;height:36px;border-radius:50%;background:#DCE6E2;flex:none}
+.rv .who img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center;flex:none}
 .rv .who b{display:block;font-weight:500;font-size:15px;line-height:1.2}
 .rv .who small{color:var(--star);font-size:12px}
 .rv p{margin:10px 0 0;color:#444;line-height:1.5}
@@ -72,11 +76,6 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .guide li i{font-style:normal;width:22px;text-align:center;flex:none;font-size:17px}
 .map{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin-top:16px;font-size:14px}
 .map small{display:block;font-size:12px;color:var(--gray)}
-.mates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.mate{border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:14px}
-.mate b{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:500}
-.mate b i{width:34px;height:34px;border-radius:50%;background:#E6E2D6}
-.mate p{margin:8px 0 0;color:#555}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .card .th{aspect-ratio:220/170;border-radius:8px;overflow:hidden;position:relative}
 .card .badge{position:absolute;top:8px;left:8px;background:var(--point);color:#fff;font-size:11px;font-weight:600;border-radius:99px;padding:1px 7px}
@@ -86,9 +85,6 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 /* 신청 = 2번 문토 신청 화면 */
 .apply{padding:110px 0 100px;border-top:1px solid var(--line);margin-top:80px}
 .apply form{max-width:590px;margin:0 auto}
-.field{display:block;margin-bottom:14px}
-.field span{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
-.field input,.field select{width:100%;height:52px;border:1px solid #E0E0E0;border-radius:8px;padding:0 14px;font:inherit;font-size:15px;background:#fff}
 .apply .safe-note{margin:18px 0 30px}
 .submit{width:100%;height:58px;border:0;border-radius:99px;background:var(--point);color:#fff;font-size:16px;font-weight:600}
 .ft{background:var(--soft);padding:40px 0 48px;font-size:13px;color:#555}
@@ -100,7 +96,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .hd{height:64px}.hd .in{gap:16px}.gnb{font-size:17px;gap:14px}.hd .util .ico,.open-btn{display:none}
   .layout{grid-template-columns:1fr}.side{position:static;order:-1}.hero-img{height:280px;margin:0 -20px}
   .tabs{top:64px;font-size:15px}.guide{font-size:16px}
-  .revs,.mates,.cards,.ft .in{grid-template-columns:1fr}
+  .revs,.cards,.ft .in{grid-template-columns:1fr}
 }
 </style>
 <!-- GA4 (Day 34에 여기에 붙이기) -->
@@ -126,13 +122,13 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <section class="blk" id="review">
       <div class="blk-h"><h2>함께 다녀온 멤버들의 후기</h2><a href="#apply">더보기 ›</a></div>
       <div class="revs">
-        <div class="rv"><div class="who"><i aria-hidden="true"></i><div><b><span class="todo">멤버 1</span></b><small>★★★★★</small></div></div><p><span class="todo">템포가 맞는 사람들이라 어색하지 않았어요</span></p></div>
-        <div class="rv"><div class="who"><i aria-hidden="true"></i><div><b><span class="todo">멤버 2</span></b><small>★★★★★</small></div></div><p><span class="todo">다들 사진 찍는 걸 좋아해서 편했어요</span></p></div>
-        <div class="rv"><div class="who"><i aria-hidden="true"></i><div><b><span class="todo">멤버 3</span></b><small>★★★★★</small></div></div><p><span class="todo">OT에서 먼저 만나서 출발이 편했어요</span></p></div>
+        <div class="rv"><div class="who"><img src="assets/images/member-1.png" alt="아이리카노 프로필 사진"><div><b>아이리카노</b><small>★★★★★</small></div></div><p>저랑 비슷한 사람들로 매칭이 되어서 편안했어요.</p></div>
+        <div class="rv"><div class="who"><img src="assets/images/member-2.png" alt="허브 프로필 사진"><div><b>허브</b><small>★★★★★</small></div></div><p>친구들이 안챙겨서 누구랑 하지 하다가 알게됐는데 너무 즐거워요.</p></div>
+        <div class="rv"><div class="who"><img src="assets/images/member-3.png" alt="냥냥 프로필 사진"><div><b>냥냥</b><small>★★★★★</small></div></div><p>OT에서 먼저 만나서 어색함이 하나도 없었어요.</p></div>
       </div>
     </section>
 
-    <nav class="tabs" aria-label="상세 탭"><a class="on" href="#info">정보</a><a href="#mates">함께하는 멤버</a><a href="#review">후기</a><a href="#more">추천</a></nav>
+    <nav class="tabs" aria-label="상세 탭"><a class="on" href="#info">정보</a><a href="#review">후기</a><a href="#more">추천</a></nav>
 
     <section class="desc" id="info">
       <p>사람부터 찾지 않아도 돼요.<br>하고 싶은 여행부터 고르세요.<br><b>* 성향 설문 후 팀이 확정돼요 *</b><br>(출발 전 온라인 OT로 미리 만나 봐요)</p>
@@ -150,26 +146,22 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       <ul class="guide">
         <li><i>🗂️</i>콘셉트 여행 &gt; 레트로 등산복 입고 등산 여행</li>
         <li><i>👥</i>성향 설문 후 팀 매칭 · 사전 OT</li>
-        <li><i>🙋</i>최소 5명 ~ 최대 8명</li>
-        <li><i>💳</i><span class="todo">금액</span> (포함 사항 <span class="todo"> </span>)</li>
-        <li><i>📅</i>여행 날짜 · 11/14-11/15 · 최대 8명</li>
+        <li><i>🙋</i>최소 15명 ~ 최대 20명</li>
+        <li><i>💳</i>10만원</li>
+        <li><i>📅</i>여행 날짜 · 11/14-11/15 · 최대 20명</li>
         <li><i>📍</i>사당역 4번 출구</li>
       </ul>
       <div class="map"><span aria-hidden="true">📍</span><div>사당역 4번 출구<small>모이는 곳은 사당역 4번 출구예요</small></div></div>
     </section>
 
-    <section class="blk" id="mates">
-      <div class="blk-h"><div><h2>멤버소개</h2><p>함께하는 멤버들을 알려드릴게요</p></div><a href="#apply">더보기 ›</a></div>
-      <div class="mates"><div class="mate"><b><i aria-hidden="true"></i>느긋한 여행러</b><p>쉬면서 천천히 걷는 걸 좋아해요</p></div><div class="mate"><b><i aria-hidden="true"></i>사진 담당</b><p>레트로 옷 입고 사진 남기고 싶어요</p></div><div class="mate"><b><i aria-hidden="true"></i>처음이에요</b><p>혼자 신청했어요, 잘 부탁드려요</p></div></div>
-    </section>
 
 
     <section class="blk" id="more">
       <div class="blk-h"><div><h2>다른 콘셉트 여행</h2><p>여행을 고르면 성향이 맞는 사람끼리 팀이 꾸려져요.</p></div><a href="#apply">더보기 ›</a></div>
       <div class="cards">
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 <span class="todo">날짜</span> · 최대 <span class="todo">n</span>명</p></a>
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 <span class="todo">날짜</span> · 최대 <span class="todo">n</span>명</p></a>
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 <span class="todo">날짜</span> · 최대 <span class="todo">n</span>명</p></a>
+        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 11/21 · 최대 20명</p></a>
+        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 11/21 · 최대 15명</p></a>
+        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 12/12 · 최대 20명</p></a>
       </div>
     </section>
   </div>
@@ -178,9 +170,9 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <div class="buy">
       <div class="pills"><span>국내여행</span><span class="rec">추천</span></div>
       <h1>레트로 등산복 입고 등산 여행</h1>
-      <div class="meta"><span>🗓 콘셉트 여행 · 11/14-11/15 · 최대 8명</span><span class="st">★</span><span>5.0</span></div>
+      <div class="meta"><span>🗓 콘셉트 여행 · 11/14-11/15 · 최대 20명</span><span class="st">★</span><span>5.0</span></div>
       <hr>
-      <div class="price"><span>참가비</span><b><span class="todo">금액</span></b></div>
+      <div class="price"><span>참가비</span><b>10만원</b></div>
       <div class="act"><span class="heart" aria-hidden="true"><i>♡</i><span>122</span></span><a class="apply-btn" href="#apply" id="cta-main">이 여행 신청하기</a></div>
     </div>
     <p class="note">성향 설문 결과로 팀이 꾸려지면 OT 일정을 안내해 드려요.</p>
@@ -189,9 +181,6 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 
 <section class="apply in" id="apply">
   <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
-    <label class="field"><span>이름</span><input id="f-name" type="text" required maxlength="20" placeholder="홍길동"></label>
-<label class="field"><span>연락처</span><input id="f-contact" type="tel" required pattern="[0-9\- ]{9,14}" placeholder="010-0000-0000"></label>
-<label class="field"><span>관심 여행</span><select id="f-select" required><option value="">선택해 주세요</option><option>자연 속 요가</option><option>레트로 등산</option><option>로컬 쿠킹</option><option>별 관찰</option></select></label>
 
     <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
     <button class="submit" type="submit" id="cta-submit">이 여행 신청하기</button>
