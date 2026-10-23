@@ -17,8 +17,8 @@
 :root{--brand:#173F45;--point:#EF806C;--ink:#1A1A1A;--gray:#8E8E8E;--line:#EDEDED;--soft:#F4F4F4;--star:#F5B100}
 body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var(--ink);background:#fff;font-size:16px;line-height:1.55;letter-spacing:-.01em}
 @media (hover:hover) and (pointer:fine){
-  html,body{cursor:url("assets/images/toravel-cursor.svg") 16 16,auto}
-  a,button,label,input,select,[role="button"]{cursor:url("assets/images/toravel-cursor.svg") 16 16,pointer}
+  html,body{cursor:url("assets/images/backpack-cursor.png") 8 4,auto}
+  a,button,label,input,select,[role="button"]{cursor:url("assets/images/backpack-cursor.png") 8 4,pointer}
 }
 .in{max-width:1200px;margin:0 auto;padding:0 20px}
 /* 헤더 */
@@ -47,8 +47,9 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .act{display:flex;align-items:center;gap:14px;margin-top:18px}
 .heart{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--point);line-height:1}
 .heart i{font-style:normal;font-size:26px}
-.apply-btn{flex:1;height:58px;border-radius:999px;background:var(--point);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+.apply-btn{flex:1;height:58px;border:0;border-radius:999px;background:var(--point);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
 .side .note{font-size:12.5px;color:var(--gray);margin:12px 4px 0}
+.side .safe-note{margin:12px 4px 0}
 /* 섹션 */
 .blk{margin-top:44px}
 .blk-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px}
@@ -78,15 +79,11 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .map small{display:block;font-size:12px;color:var(--gray)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .card .th{aspect-ratio:220/170;border-radius:8px;overflow:hidden;position:relative}
+.card .th>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
 .card .badge{position:absolute;top:8px;left:8px;background:var(--point);color:#fff;font-size:11px;font-weight:600;border-radius:99px;padding:1px 7px}
 .card .cat{font-size:13px;color:var(--gray);margin:8px 0 0}
 .card h3{font-size:16px;font-weight:600;margin:2px 0 0;line-height:1.4}
 .card .d{font-size:13px;color:var(--gray);margin-top:4px}
-/* 신청 = 2번 문토 신청 화면 */
-.apply{padding:110px 0 100px;border-top:1px solid var(--line);margin-top:80px}
-.apply form{max-width:590px;margin:0 auto}
-.apply .safe-note{margin:18px 0 30px}
-.submit{width:100%;height:58px;border:0;border-radius:99px;background:var(--point);color:#fff;font-size:16px;font-weight:600}
 .ft{background:var(--soft);padding:40px 0 48px;font-size:13px;color:#555}
 .ft .in{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px}
 .ft b{display:block;font-size:14px;color:var(--ink);margin-bottom:14px}
@@ -122,8 +119,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <section class="blk" id="review">
       <div class="blk-h"><h2>함께 다녀온 멤버들의 후기</h2><a href="#apply">더보기 ›</a></div>
       <div class="revs">
-        <div class="rv"><div class="who"><img src="assets/images/member-1.png" alt="아이리카노 프로필 사진"><div><b>아이리카노</b><small>★★★★★</small></div></div><p>저랑 비슷한 사람들로 매칭이 되어서 편안했어요.</p></div>
-        <div class="rv"><div class="who"><img src="assets/images/member-2.png" alt="허브 프로필 사진"><div><b>허브</b><small>★★★★★</small></div></div><p>친구들이 안챙겨서 누구랑 하지 하다가 알게됐는데 너무 즐거워요.</p></div>
+        <div class="rv"><div class="who"><img src="assets/images/member-1.png" alt="아메리카노 프로필 사진"><div><b>아메리카노</b><small>★★★★★</small></div></div><p>저랑 비슷한 사람들로 매칭이 되어서 편안했어요.</p></div>
+        <div class="rv"><div class="who"><img src="assets/images/member-2.png" alt="하브 프로필 사진"><div><b>하브</b><small>★★★★★</small></div></div><p>친구들이 안챙겨서 누구랑 하지 하다가 알게됐는데 너무 즐거워요.</p></div>
         <div class="rv"><div class="who"><img src="assets/images/member-3.png" alt="냥냥 프로필 사진"><div><b>냥냥</b><small>★★★★★</small></div></div><p>OT에서 먼저 만나서 어색함이 하나도 없었어요.</p></div>
       </div>
     </section>
@@ -148,7 +145,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
         <li><i>👥</i>성향 설문 후 팀 매칭 · 사전 OT</li>
         <li><i>🙋</i>최소 15명 ~ 최대 20명</li>
         <li><i>💳</i>10만원</li>
-        <li><i>📅</i>여행 날짜 · 11/14-11/15 · 최대 20명</li>
+        <li><i>📅</i>여행 날짜 · 11/14 · 최대 20명</li>
         <li><i>📍</i>사당역 4번 출구</li>
       </ul>
       <div class="map"><span aria-hidden="true">📍</span><div>사당역 4번 출구<small>모이는 곳은 사당역 4번 출구예요</small></div></div>
@@ -159,33 +156,29 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <section class="blk" id="more">
       <div class="blk-h"><div><h2>다른 콘셉트 여행</h2><p>여행을 고르면 성향이 맞는 사람끼리 팀이 꾸려져요.</p></div><a href="#apply">더보기 ›</a></div>
       <div class="cards">
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 11/21 · 최대 20명</p></a>
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 11/21 · 최대 15명</p></a>
-        <a class="card" href="#apply"><div class="th"><div class="ph "><span>여행 사진</span></div></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 12/12 · 최대 20명</p></a>
+        <a class="card" href="#apply"><div class="th"><img src="assets/images/yoga-trip.png" alt="자연 속에서 함께 요가를 하는 여행 참가자들"><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 11/21 · 최대 20명</p></a>
+        <a class="card" href="#apply"><div class="th"><img src="assets/images/cooking-trip.png" alt="한옥 공간에서 함께 요리하는 로컬 쿠킹 클래스 참가자들"></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 11/21 · 최대 15명</p></a>
+        <a class="card" href="#apply"><div class="th"><img src="assets/images/stargazing-trip.png" alt="밤하늘의 별과 은하수를 관찰하는 여행 참가자들"></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 12/12 · 최대 20명</p></a>
       </div>
     </section>
   </div>
 
-  <aside class="side">
+  <aside class="side" id="apply">
     <div class="buy">
       <div class="pills"><span>국내여행</span><span class="rec">추천</span></div>
       <h1>레트로 등산복 입고 등산 여행</h1>
-      <div class="meta"><span>🗓 콘셉트 여행 · 11/14-11/15 · 최대 20명</span><span class="st">★</span><span>5.0</span></div>
+      <div class="meta"><span>🗓 콘셉트 여행 · 11/14 · 최대 20명</span><span class="st">★</span><span>5.0</span></div>
       <hr>
       <div class="price"><span>참가비</span><b>10만원</b></div>
-      <div class="act"><span class="heart" aria-hidden="true"><i>♡</i><span>122</span></span><a class="apply-btn" href="#apply" id="cta-main">이 여행 신청하기</a></div>
+      <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
+        <div class="act"><span class="heart" aria-hidden="true"><i>♡</i><span>122</span></span><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button></div>
+      </form>
     </div>
     <p class="note">성향 설문 결과로 팀이 꾸려지면 OT 일정을 안내해 드려요.</p>
+    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
   </aside>
 </main>
 
-<section class="apply in" id="apply">
-  <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
-
-    <div class="safe-note"><span aria-hidden="true">🔒</span><div>입력한 정보는 <b>어디에도 전송·저장되지 않고</b> 완료 즉시 지워집니다. <button type="button" data-privacy-open>자세히 보기</button></div></div>
-    <button class="submit" type="submit" id="cta-submit">이 여행 신청하기</button>
-  </form>
-</section>
 
 <footer class="ft"><div class="in">
   <div><b>Toravel 정보</b><a href="#info">여행 안내</a><a href="#review">후기</a><a href="#apply">자주 묻는 질문</a></div>
