@@ -71,7 +71,10 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .desc .left b{display:block;margin:20px 0 4px}
 .desc .pic{height:auto;margin-top:20px;border-radius:4px;overflow:hidden}
 .desc .pic img{display:block;width:100%;height:auto;object-fit:contain}
-.more-btn{display:flex;justify-content:center;border:1px solid var(--line);border-radius:8px;padding:10px;font-size:16px;margin-top:10px}
+.detail-content{position:relative;max-height:760px;overflow:hidden;transition:max-height .45s ease}
+.detail-content:not(.expanded)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(transparent,#fff);pointer-events:none}
+.more-btn{width:100%;display:flex;justify-content:center;border:1px solid var(--line);border-radius:8px;padding:10px;font-size:16px;margin-top:10px;background:#fff;color:var(--ink)}
+.more-btn[aria-expanded="true"]{border-color:#D7D7D7}
 .guide{list-style:none;padding:0;margin:0;font-size:20px;line-height:1.5}
 .guide li{display:flex;gap:10px;margin-bottom:10px}
 .guide li i{font-style:normal;width:22px;text-align:center;flex:none;font-size:17px}
@@ -92,7 +95,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 @media (max-width:1000px){
   .hd{height:64px}.hd .in{gap:16px}.gnb{font-size:17px;gap:14px}.hd .util .ico,.open-btn{display:none}
   .layout{grid-template-columns:1fr}.side{position:static;order:-1}.hero-img{height:280px;margin:0 -20px}
-  .tabs{top:64px;font-size:15px}.guide{font-size:16px}
+  .tabs{top:64px;font-size:15px}.guide{font-size:16px}.detail-content{max-height:620px}
   .revs,.cards,.ft .in{grid-template-columns:1fr}
 }
 </style>
@@ -135,6 +138,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <nav class="tabs" aria-label="상세 탭"><a class="on" href="#info">정보</a><a href="#review">후기</a><a href="#more">추천</a></nav>
 
     <section class="desc" id="info">
+      <div class="detail-content" id="trip-detail-content">
       <p>사람부터 찾지 않아도 돼요.<br>하고 싶은 여행부터 고르세요.<br><b>* 성향 설문 후 팀이 확정돼요 *</b><br>(출발 전 온라인 OT로 미리 만나 봐요)</p>
       <div class="left">
         <b>🏔️ 이 여행은 이런 여행이에요</b>설문으로 여행 성향이 맞는 사람끼리 팀을 꾸리고, 출발 전 OT로 먼저 만나 본 뒤 떠나요. &#39;레트로 등산복 입고 등산 여행&#39;, &#39;자연 속 요가 여행&#39; 같은 콘셉트 여행을 골라 보세요.
@@ -146,7 +150,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
         <img src="assets/images/retro-hiking-detail-2.png" alt="여행 성향 매칭과 신청부터 출발까지의 과정을 소개하는 이미지">
         <img src="assets/images/retro-hiking-detail-3.png" alt="출발 전 오프라인 OT와 동행 준비 과정을 소개하는 이미지">
       </div>
-      <a class="more-btn" href="#apply">더보기 ⌄</a>
+      </div>
+      <button class="more-btn" type="button" id="detail-toggle" aria-expanded="false" aria-controls="trip-detail-content">더보기 ⌄</button>
     </section>
 
     <section class="blk">
@@ -196,7 +201,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <div><b>소셜 미디어</b><a href="#">인스타그램</a><a href="#">블로그</a></div>
   <div><b>Toravel</b><p>이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</p><p><a href="#" data-privacy-open style="display:inline">개인정보 처리 안내</a></p></div>
 </div></footer>
-<script src="assets/analytics.js"></script>\n<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+<script src="assets/analytics.js"></script>
+<script src="assets/detail-toggle.js"></script>\n<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
   <div class="modal-box">
     <span class="badge">개인정보 미수집 · 즉시 파기</span>
     <h2 id="privacy-title">개인정보 처리 안내</h2>
