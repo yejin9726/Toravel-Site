@@ -19,10 +19,17 @@
 .funnel i{align-self:center;font-style:normal;opacity:.4}
 .wiped{display:inline-block;margin-top:22px;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px}
 </style>
-<!-- GA4 (Day 34: 이 페이지 조회를 전환으로 잡습니다) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WJ8EVDH1N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5WJ8EVDH1N');
+</script>
 <!-- Meta Pixel (Day 35) -->
 </head>
-<body>
+<body class="ga-result-page">
 <main class="result"><div class="wrap box">
   <div class="check">✓</div>
   <span class="eyebrow">Toravel</span>
@@ -40,5 +47,5 @@
     <a class="btn" href="./">처음 화면으로</a>
   </div>
 </div></main>
-</body>
+<script src="assets/analytics.js"></script>\n</body>
 </html>

@@ -30,23 +30,68 @@
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     agree.focus();
+    if (m === 'submit' && typeof window.toravelTrack === 'function') {
+      window.toravelTrack('privacy_notice_open', {
+        element_location: 'privacy_modal',
+        open_mode: 'submit',
+        trip_id: 'retro_hiking_11_14'
+      });
+    }
   }
 
-  function close() {
+  function close(method) {
+    if (typeof window.toravelTrack === 'function') {
+      window.toravelTrack('application_modal_close', {
+        element_location: 'privacy_modal',
+        modal_mode: mode,
+        close_method: method || 'unknown'
+      });
+    }
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
   }
 
-  agree.addEventListener('change', function () { ok.disabled = !agree.checked; });
-  cancel.addEventListener('click', close);
-  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  agree.addEventListener('change', function () {
+    ok.disabled = !agree.checked;
+    if (typeof window.toravelTrack === 'function') {
+      window.toravelTrack('privacy_consent_change', {
+        element_location: 'privacy_modal',
+        modal_mode: mode,
+        consent_state: agree.checked ? 'granted' : 'denied'
+      });
+    }
+  });
+  cancel.addEventListener('click', function () { close('button'); });
+  modal.addEventListener('click', function (e) { if (e.target === modal) close('backdrop'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) close('escape');
+  });
 
   ok.addEventListener('click', function () {
-    if (mode !== 'submit') { close(); return; }
+    if (mode !== 'submit') {
+      if (typeof window.toravelTrack === 'function') {
+        window.toravelTrack('navigation_click', {
+          element_location: 'privacy_modal',
+          element_text: '확인했습니다',
+          action: 'acknowledge',
+          modal_mode: 'info'
+        });
+      }
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      return;
+    }
     wipe();
-    // 분석 도구를 붙였다면 여기서 개인정보 없이 이벤트 이름만 보냅니다 (Day 34~35).
-    if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead');
+    if (typeof window.toravelTrack === 'function') {
+      window.toravelTrack('generate_lead', {
+        trip_id: 'retro_hiking_11_14',
+        trip_name: '레트로 등산복 입고 등산 여행',
+        trip_category: 'concept_trip',
+        lead_type: 'trip_application',
+        value: 130000,
+        currency: 'KRW'
+      });
+    }
     if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
     location.replace('result.html');
   });
