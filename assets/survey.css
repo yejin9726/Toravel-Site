@@ -98,6 +98,8 @@ button,input{font:inherit}
 #question-title:focus,#review-title:focus{outline:none}
 .selection-help{margin:9px 0 24px;color:var(--muted);font-size:14px}
 .option-list{display:grid;gap:12px}
+.travel-rules{margin:0 0 10px;padding:16px 18px 16px 38px;border-radius:14px;background:var(--surface);color:#455154;font-size:14px;line-height:1.65}
+.travel-rules li+li{margin-top:5px}
 .option-item{position:relative;display:block}
 .option-item input{
   position:absolute;
