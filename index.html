@@ -45,8 +45,11 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .price{display:flex;justify-content:space-between;align-items:baseline;font-size:16px}
 .price b{font-size:24px;font-weight:600}
 .act{display:flex;align-items:center;gap:14px;margin-top:18px}
-.heart{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--point);line-height:1}
+.heart{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:42px;padding:2px;color:var(--point);font-size:12px;line-height:1;border-radius:8px}
+.heart:hover{background:#FDECE8}
+.heart:focus-visible{outline:2px solid var(--point);outline-offset:3px}
 .heart i{font-style:normal;font-size:26px}
+.heart[aria-pressed="true"] i{transform:scale(1.08)}
 .apply-btn{flex:1;height:58px;border:0;border-radius:999px;background:var(--point);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
 .side .note{font-size:12.5px;color:var(--gray);margin:12px 4px 0}
 .side .safe-note{margin:12px 4px 0}
@@ -187,7 +190,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       <hr>
       <div class="price"><span>참가비</span><b>13만원</b></div>
       <form id="lead-form" action="result.html" method="get" autocomplete="off" novalidate>
-        <div class="act"><span class="heart" aria-hidden="true"><i>♡</i><span>122</span></span><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button></div>
+        <div class="act"><button class="heart" type="button" id="favorite-toggle" aria-pressed="false" aria-label="레트로 등산복 입고 등산 여행 찜하기"><i aria-hidden="true">♡</i><span class="favorite-count">122</span></button><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button></div>
       </form>
     </div>
     <p class="note">성향 설문 결과로 팀이 꾸려지면 OT 일정을 안내해 드려요.</p>
@@ -202,7 +205,8 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   <div><b>Toravel</b><p>이 페이지는 수업 실습용 페이지입니다. 실제 판매·결제는 이루어지지 않으며, 표기된 수치·후기는 예시입니다.</p><p><a href="#" data-privacy-open style="display:inline">개인정보 처리 안내</a></p></div>
 </div></footer>
 <script src="assets/analytics.js"></script>
-<script src="assets/detail-toggle.js"></script>\n<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
+<script src="assets/detail-toggle.js"></script>
+<script src="assets/favorite-scroll.js"></script>\n<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" aria-hidden="true">
   <div class="modal-box">
     <span class="badge">개인정보 미수집 · 즉시 파기</span>
     <h2 id="privacy-title">개인정보 처리 안내</h2>
