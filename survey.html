@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>여행 성향 설문 | Toravel</title>
+<meta name="description" content="함께 떠날 여행팀을 위한 8문항의 여행 성향 설문입니다.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/survey.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WJ8EVDH1N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5WJ8EVDH1N');
+</script>
+</head>
+<body class="ga-survey-page">
+<header class="survey-header">
+  <a class="survey-logo" href="./" aria-label="Toravel 홈으로">Toravel</a>
+  <span>여행 성향 설문</span>
+</header>
+
+<main class="survey-shell">
+  <section class="survey-card" id="survey-app" aria-live="off">
+    <div id="survey-intro">
+      <span class="survey-eyebrow">Travel preference survey</span>
+      <h1>같이 떠나기 전,<br>여행의 결을 맞춰봐요.</h1>
+      <p class="survey-lead">이번 여행에서 원하는 모습에 가장 가까운 답을 골라주세요. 정답은 없어요. 답변은 함께할 여행팀을 구성하는 데 참고해요.</p>
+      <ul class="survey-meta" aria-label="설문 안내">
+        <li><strong>8문항</strong><span>한 문항씩 진행해요</span></li>
+        <li><strong>약 1분 30초</strong><span>짧게 선택할 수 있어요</span></li>
+        <li><strong>저장하지 않음</strong><span>완료 즉시 답변을 지워요</span></li>
+      </ul>
+      <div class="survey-actions intro-actions">
+        <a class="survey-button secondary" href="./#apply">취소하고 돌아가기</a>
+        <button class="survey-button primary" type="button" id="survey-start">설문 시작하기</button>
+      </div>
+      <p class="privacy-caption">설문 답변은 서버, 외부 서비스 또는 GA4로 전송되지 않습니다.</p>
+    </div>
+
+    <div id="survey-question" hidden>
+      <div class="progress-row">
+        <span id="progress-label">1 / 8</span>
+        <span id="progress-percent">13%</span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="1" aria-valuemax="8" aria-valuenow="1">
+        <span id="progress-fill"></span>
+      </div>
+      <form id="question-form" novalidate>
+        <fieldset id="question-fieldset">
+          <legend id="question-title" tabindex="-1"></legend>
+          <p class="selection-help" id="selection-help"></p>
+          <div class="option-list" id="option-list"></div>
+          <p class="question-notice" id="question-notice" aria-live="polite"></p>
+        </fieldset>
+        <div class="survey-actions">
+          <button class="survey-button secondary" type="button" id="survey-back">이전</button>
+          <button class="survey-button primary" type="submit" id="survey-next" disabled>다음</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="survey-review" hidden>
+      <span class="survey-eyebrow">Review</span>
+      <h1 tabindex="-1" id="review-title">응답을 확인해 주세요.</h1>
+      <p class="survey-lead" id="review-status">8개 문항에 모두 응답했습니다.</p>
+      <div class="agreement-status" id="agreement-status"></div>
+      <details class="answer-summary">
+        <summary>선택한 답변 확인하기</summary>
+        <div id="answer-summary-list"></div>
+      </details>
+      <div class="survey-actions">
+        <button class="survey-button secondary" type="button" id="review-edit">응답 수정하기</button>
+        <button class="survey-button primary" type="button" id="review-complete">설문 완료하기</button>
+      </div>
+      <p class="privacy-caption">완료 전 개인정보 미수집 안내를 한 번 더 확인합니다.</p>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="survey-privacy-modal" role="dialog" aria-modal="true" aria-labelledby="survey-privacy-title" aria-hidden="true">
+  <div class="modal-box">
+    <span class="badge">개인정보 미수집 · 즉시 파기</span>
+    <h2 id="survey-privacy-title">설문 답변 처리 안내</h2>
+    <ol>
+      <li><strong>설문 답변은 어디에도 전송하거나 저장하지 않습니다.</strong> 서버, 데이터베이스, 이메일, 스프레드시트 및 외부 서비스로 보내지 않습니다.</li>
+      <li>GA4에는 문항 진행 단계와 완료 여부만 기록하며, <strong>선택한 답변값은 전송하지 않습니다.</strong></li>
+      <li>답변은 현재 브라우저 메모리에만 잠시 존재하며, 완료 즉시 삭제합니다. 쿠키, localStorage, sessionStorage에도 저장하지 않습니다.</li>
+    </ol>
+    <label><input type="checkbox" id="survey-privacy-agree"> 위 내용을 확인했으며, 설문 완료 시 답변이 즉시 삭제된다는 점에 동의합니다.</label>
+    <div class="modal-actions">
+      <button type="button" class="cancel" id="survey-privacy-cancel">돌아가기</button>
+      <button type="button" class="ok" id="survey-privacy-ok" disabled>동의하고 완료하기</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/analytics.js"></script>
+<script src="assets/survey.js"></script>
+</body>
+</html>

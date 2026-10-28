@@ -14,7 +14,8 @@
   window.toravelTrack = function (eventName, params) {
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, Object.assign({
-      page_type: document.body.classList.contains('ga-result-page') ? 'result' : 'landing'
+      page_type: document.body.classList.contains('ga-result-page') ? 'result' :
+        document.body.classList.contains('ga-survey-page') ? 'survey' : 'landing'
     }, params || {}));
   };
 

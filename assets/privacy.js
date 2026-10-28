@@ -100,14 +100,6 @@
     b.addEventListener('click', function (e) { e.preventDefault(); open('info'); });
   });
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      open('submit');
-    });
-  }
-
   // 검토 메모 패널 닫기 (검토용 빌드에만 있음)
   var rp = document.querySelector('.review-panel button');
   if (rp) rp.addEventListener('click', function () { rp.parentNode.remove(); });
