@@ -202,7 +202,11 @@
     if (typeof window.toravelTrack !== 'function') return;
     window.toravelTrack(eventName, Object.assign({
       survey_id: SURVEY_ID,
-      trip_id: TRIP.trip_id
+      trip_id: TRIP.trip_id,
+      trip_name: TRIP.trip_name,
+      trip_category: TRIP.trip_category,
+      travel_date: TRIP.travel_date,
+      max_participants: TRIP.max_participants
     }, params || {}));
   }
 
