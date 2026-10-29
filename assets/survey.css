@@ -62,6 +62,7 @@ button,input{font:inherit}
   line-height:1.22;
   letter-spacing:-.035em;
 }
+.survey-trip-context{display:inline-block;margin:0 0 12px;padding:7px 11px;border-radius:8px;background:#E8F2EE;color:var(--brand);font-size:14px;font-weight:700}
 .survey-lead{margin:18px 0 0;color:#4F595C;font-size:17px;line-height:1.7}
 .survey-meta{
   list-style:none;

@@ -8,9 +8,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Toravel | 하고 싶은 여행부터 고르는 동행 매칭">
 <meta property="og:description" content="콘셉트 여행을 고르면 여행 방식과 교류 성향이 맞는 사람끼리 팀으로 묶어 드려요.">
-<meta property="og:image" content="https://YOUR-GITHUB-ID.github.io/assets/og.png">
-<meta property="og:url" content="https://YOUR-GITHUB-ID.github.io/">
-<link rel="canonical" href="https://YOUR-GITHUB-ID.github.io/">
+<meta property="og:image" content="https://yejin9726.github.io/Toravel-Site/assets/images/retro-hiking-hero.png">
+<meta property="og:url" content="https://yejin9726.github.io/Toravel-Site/">
+<link rel="canonical" href="https://yejin9726.github.io/Toravel-Site/">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="assets/base.css">
 <style>
@@ -114,7 +114,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 <!-- Microsoft Clarity (Day 38에 여기에 붙이기) -->
 <!-- Schema JSON-LD (Day 29) -->
 </head>
-<body>
+<body data-trip-id="retro_hiking_11_14" data-trip-name="레트로 등산복 입고 등산 여행" data-trip-category="concept_trip" data-travel-date="11-14" data-max-participants="20" data-trip-value="130000" data-trip-currency="KRW">
 <header class="hd"><div class="in">
   <a class="logo" href="./">Toravel</a>
   <nav class="gnb"><a href="#info">여행</a><a href="#review">후기</a><a href="#how">매칭</a></nav>
@@ -175,9 +175,9 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
     <section class="blk" id="more">
       <div class="blk-h"><div><h2>다른 콘셉트 여행</h2><p>여행을 고르면 성향이 맞는 사람끼리 팀이 꾸려져요.</p></div><a href="#apply">더보기 ›</a></div>
       <div class="cards">
-        <a class="card" href="#apply"><div class="th"><img src="assets/images/yoga-trip.png" alt="자연 속에서 함께 요가를 하는 여행 참가자들"><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 11/21 · 최대 20명</p></a>
-        <a class="card" href="#apply"><div class="th"><img src="assets/images/cooking-trip.png" alt="한옥 공간에서 함께 요리하는 로컬 쿠킹 클래스 참가자들"></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 11/21 · 최대 15명</p></a>
-        <a class="card" href="#apply"><div class="th"><img src="assets/images/stargazing-trip.png" alt="밤하늘의 별과 은하수를 관찰하는 여행 참가자들"></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 12/12 · 최대 20명</p></a>
+        <a class="card" href="trip-yoga.html" data-trip-id="nature_yoga_11_21" data-trip-name="자연 속 요가 1박 2일" data-travel-date="11-21" data-max-participants="20" data-index="1"><div class="th"><img src="assets/images/yoga-trip.png" alt="자연 속에서 함께 요가를 하는 여행 참가자들"><span class="badge">추천</span></div><p class="cat">콘셉트 여행</p><h3>자연 속 요가 1박 2일</h3><p class="d">📅 11/21 · 최대 20명</p></a>
+        <a class="card" href="trip-cooking.html" data-trip-id="local_cooking_11_21" data-trip-name="로컬 쿠킹 클래스 여행" data-travel-date="11-21" data-max-participants="15" data-index="2"><div class="th"><img src="assets/images/cooking-trip.png" alt="한옥 공간에서 함께 요리하는 로컬 쿠킹 클래스 참가자들"></div><p class="cat">콘셉트 여행</p><h3>로컬 쿠킹 클래스 여행</h3><p class="d">📅 11/21 · 최대 15명</p></a>
+        <a class="card" href="trip-stargazing.html" data-trip-id="stargazing_12_12" data-trip-name="별 보러 가는 밤" data-travel-date="12-12" data-max-participants="20" data-index="3"><div class="th"><img src="assets/images/stargazing-trip.png" alt="밤하늘의 별과 은하수를 관찰하는 여행 참가자들"></div><p class="cat">콘셉트 여행</p><h3>별 보러 가는 밤</h3><p class="d">📅 12/12 · 최대 20명</p></a>
       </div>
     </section>
   </div>
@@ -190,6 +190,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       <hr>
       <div class="price"><span>참가비</span><b>13만원</b></div>
       <form id="lead-form" action="survey.html" method="get" autocomplete="off" novalidate>
+        <input type="hidden" name="trip" value="retro_hiking_11_14">
         <div class="act"><button class="heart" type="button" id="favorite-toggle" aria-pressed="false" aria-label="레트로 등산복 입고 등산 여행 찜하기"><i aria-hidden="true">♡</i><span class="favorite-count">122</span></button><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button></div>
       </form>
     </div>
