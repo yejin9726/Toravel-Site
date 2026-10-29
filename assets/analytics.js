@@ -31,6 +31,33 @@
     });
   }
 
+  function trackMeta(eventName, params) {
+    if (!window.fbq || eventName === 'page_view' || /scroll/i.test(eventName)) return;
+
+    var standardEvents = {
+      generate_lead: 'Lead',
+      sign_up: 'CompleteRegistration',
+      contact_click: 'Contact',
+      view_item: 'ViewContent',
+      add_to_cart: 'AddToCart',
+      begin_checkout: 'InitiateCheckout',
+      purchase: 'Purchase',
+      search: 'Search'
+    };
+    var metaEventName = standardEvents[eventName];
+
+    if (metaEventName === 'Purchase') {
+      fbq('track', 'Purchase', {
+        value: params && params.value,
+        currency: 'KRW'
+      });
+    } else if (metaEventName) {
+      fbq('track', metaEventName);
+    } else {
+      fbq('trackCustom', eventName);
+    }
+  }
+
   window.toravelTrack = function (eventName, params) {
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, compact(Object.assign({
@@ -38,6 +65,7 @@
         document.body.classList.contains('ga-survey-page') ? 'survey' :
         document.body.classList.contains('ga-trip-page') ? 'trip_detail' : 'landing'
     }, params || {})));
+    trackMeta(eventName, params);
   };
 
   function locationOf(el) {
