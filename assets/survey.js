@@ -447,6 +447,7 @@
         event_callback: goToResult,
         event_timeout: 900
       }));
+      if (window.fbq) fbq('track', 'Lead');
       window.setTimeout(goToResult, 1000);
     } else {
       goToResult();
