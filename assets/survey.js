@@ -2,14 +2,72 @@
   'use strict';
 
   var SURVEY_ID = 'travel_preference_v1';
-  var TRIP = {
-    trip_id: 'retro_hiking_11_14',
-    trip_name: '레트로 등산복 입고 등산 여행',
-    trip_category: 'concept_trip',
-    lead_type: 'trip_application',
-    value: 130000,
-    currency: 'KRW'
+  var TRIPS = {
+    retro_hiking_11_14: {
+      trip_id: 'retro_hiking_11_14',
+      trip_name: '레트로 등산복 입고 등산 여행',
+      trip_category: 'concept_trip',
+      travel_date: '11-14',
+      max_participants: 20,
+      lead_type: 'trip_application',
+      value: 130000,
+      currency: 'KRW',
+      detail_url: './#apply'
+    },
+    nature_yoga_11_21: {
+      trip_id: 'nature_yoga_11_21',
+      trip_name: '자연 속 요가 1박 2일',
+      trip_category: 'concept_trip',
+      travel_date: '11-21',
+      max_participants: 20,
+      lead_type: 'trip_application',
+      detail_url: 'trip-yoga.html#apply'
+    },
+    local_cooking_11_21: {
+      trip_id: 'local_cooking_11_21',
+      trip_name: '로컬 쿠킹 클래스 여행',
+      trip_category: 'concept_trip',
+      travel_date: '11-21',
+      max_participants: 15,
+      lead_type: 'trip_application',
+      detail_url: 'trip-cooking.html#apply'
+    },
+    stargazing_12_12: {
+      trip_id: 'stargazing_12_12',
+      trip_name: '별 보러 가는 밤',
+      trip_category: 'concept_trip',
+      travel_date: '12-12',
+      max_participants: 20,
+      lead_type: 'trip_application',
+      detail_url: 'trip-stargazing.html#apply'
+    }
   };
+
+  var requestedTrip = new URLSearchParams(window.location.search).get('trip');
+  var TRIP = TRIPS[requestedTrip] || TRIPS.retro_hiking_11_14;
+
+  function compact(object) {
+    var result = {};
+    Object.keys(object).forEach(function (key) {
+      if (object[key] !== undefined && object[key] !== null && object[key] !== '') {
+        result[key] = object[key];
+      }
+    });
+    return result;
+  }
+
+  function tripEventParams() {
+    return compact({
+      trip_id: TRIP.trip_id,
+      trip_name: TRIP.trip_name,
+      trip_category: TRIP.trip_category,
+      travel_date: TRIP.travel_date,
+      max_participants: TRIP.max_participants,
+      lead_type: TRIP.lead_type,
+      value: TRIP.value,
+      currency: TRIP.currency
+    });
+  }
 
   var QUESTIONS = [
     {
@@ -134,6 +192,11 @@
   var privacyAgree = document.getElementById('survey-privacy-agree');
   var privacyCancel = document.getElementById('survey-privacy-cancel');
   var privacyOk = document.getElementById('survey-privacy-ok');
+  var tripContext = document.getElementById('survey-trip-context');
+  var cancelLink = document.getElementById('survey-cancel');
+
+  tripContext.textContent = TRIP.trip_name + ' 신청을 위한 여행 성향 설문';
+  cancelLink.href = TRIP.detail_url;
 
   function track(eventName, params) {
     if (typeof window.toravelTrack !== 'function') return;
@@ -375,7 +438,7 @@
     }
 
     if (typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', Object.assign({}, TRIP, {
+      window.gtag('event', 'generate_lead', Object.assign(tripEventParams(), {
         page_type: 'survey',
         event_callback: goToResult,
         event_timeout: 900
