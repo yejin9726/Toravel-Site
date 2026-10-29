@@ -92,7 +92,6 @@
         currency: 'KRW'
       });
     }
-    if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
     location.replace('result.html');
   });
 
