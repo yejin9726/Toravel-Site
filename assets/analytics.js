@@ -2,21 +2,42 @@
 (function () {
   'use strict';
 
-  var TRIP = {
-    trip_id: 'retro_hiking_11_14',
-    trip_name: '레트로 등산복 입고 등산 여행',
-    trip_category: 'concept_trip',
-    travel_date: '11-14',
-    value: 130000,
-    currency: 'KRW'
-  };
+  function numberOrUndefined(value) {
+    if (value === undefined || value === null || value === '') return undefined;
+    var parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : undefined;
+  }
+
+  function compact(object) {
+    var result = {};
+    Object.keys(object).forEach(function (key) {
+      if (object[key] !== undefined && object[key] !== null && object[key] !== '') {
+        result[key] = object[key];
+      }
+    });
+    return result;
+  }
+
+  function currentTrip() {
+    var data = document.body.dataset || {};
+    return compact({
+      trip_id: data.tripId || 'retro_hiking_11_14',
+      trip_name: data.tripName || '레트로 등산복 입고 등산 여행',
+      trip_category: data.tripCategory || 'concept_trip',
+      travel_date: data.travelDate || '11-14',
+      max_participants: numberOrUndefined(data.maxParticipants),
+      value: numberOrUndefined(data.tripValue || (data.tripId ? undefined : 130000)),
+      currency: data.tripCurrency || (data.tripId ? undefined : 'KRW')
+    });
+  }
 
   window.toravelTrack = function (eventName, params) {
     if (typeof window.gtag !== 'function') return;
-    window.gtag('event', eventName, Object.assign({
+    window.gtag('event', eventName, compact(Object.assign({
       page_type: document.body.classList.contains('ga-result-page') ? 'result' :
-        document.body.classList.contains('ga-survey-page') ? 'survey' : 'landing'
-    }, params || {}));
+        document.body.classList.contains('ga-survey-page') ? 'survey' :
+        document.body.classList.contains('ga-trip-page') ? 'trip_detail' : 'landing'
+    }, params || {})));
   };
 
   function locationOf(el) {
@@ -27,7 +48,7 @@
     if (el.closest('#more')) return 'recommendation';
     if (el.closest('#apply')) return 'sidebar';
     if (el.closest('footer')) return 'footer';
-    if (el.closest('#privacy-modal')) return 'privacy_modal';
+    if (el.closest('#privacy-modal') || el.closest('#survey-privacy-modal')) return 'privacy_modal';
     if (el.closest('.result')) return 'result';
     return 'content';
   }
@@ -53,24 +74,23 @@
     }
 
     if (el.matches('.card')) {
-      var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
-      var index = cards.indexOf(el);
-      var trips = [
-        { trip_id: 'nature_yoga_1n2d', trip_name: '자연 속 요가 1박 2일', travel_date: '11-21', max_participants: 20 },
-        { trip_id: 'local_cooking_class', trip_name: '로컬 쿠킹 클래스 여행', travel_date: '11-21', max_participants: 15 },
-        { trip_id: 'stargazing_night', trip_name: '별 보러 가는 밤', travel_date: '12-12', max_participants: 20 }
-      ];
-      window.toravelTrack('select_trip', Object.assign(base, trips[index], {
+      var cards = Array.prototype.slice.call(el.closest('.cards') ? el.closest('.cards').querySelectorAll('.card') : document.querySelectorAll('.card'));
+      var index = Number(el.dataset.index) || cards.indexOf(el) + 1;
+      window.toravelTrack('select_trip', compact(Object.assign(base, {
+        trip_id: el.dataset.tripId,
+        trip_name: el.dataset.tripName,
+        travel_date: el.dataset.travelDate,
+        max_participants: numberOrUndefined(el.dataset.maxParticipants),
         item_list_name: 'recommended_trips',
-        index: index + 1
-      }));
+        index: index
+      })));
       return;
     }
 
     if (el.id === 'cta-main') {
-      window.toravelTrack('cta_click', Object.assign(base, TRIP, {
+      window.toravelTrack('cta_click', Object.assign(base, currentTrip(), {
         cta_type: 'application_start',
-        link_target: 'privacy_modal'
+        link_target: 'survey'
       }));
       return;
     }
