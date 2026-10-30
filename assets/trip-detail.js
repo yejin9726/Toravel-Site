@@ -33,7 +33,7 @@
       var expanding = toggle.getAttribute('aria-expanded') === 'false';
       toggle.setAttribute('aria-expanded', String(expanding));
       detail.classList.toggle('expanded', expanding);
-      detail.style.maxHeight = expanding ? detail.scrollHeight + 'px' : collapsedHeight + 'px';
+      detail.style.maxHeight = expanding ? 'none' : collapsedHeight + 'px';
       toggle.textContent = expanding ? '접기 ⌃' : '더보기 ⌄';
 
       if (!expanding) {
@@ -54,7 +54,7 @@
     window.addEventListener('resize', function () {
       collapsedHeight = window.matchMedia('(max-width: 1000px)').matches ? 480 : 560;
       if (toggle.getAttribute('aria-expanded') === 'true') {
-        detail.style.maxHeight = detail.scrollHeight + 'px';
+        detail.style.maxHeight = 'none';
       } else {
         setCollapsedHeight();
       }
