@@ -10,7 +10,9 @@
       travel_date: '11-14',
       max_participants: 20,
       lead_type: 'trip_application',
-      value: 130000,
+      price: 130000,
+      expected_purchase_rate: 0.10,
+      expected_lead_value: 13000,
       currency: 'KRW',
       detail_url: './#apply'
     },
@@ -64,8 +66,10 @@
       travel_date: TRIP.travel_date,
       max_participants: TRIP.max_participants,
       lead_type: TRIP.lead_type,
-      value: TRIP.value,
-      currency: TRIP.currency
+      value: TRIP.expected_lead_value,
+      currency: TRIP.currency,
+      trip_price: TRIP.price,
+      value_type: TRIP.expected_lead_value ? 'expected_revenue' : undefined
     });
   }
 
