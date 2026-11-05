@@ -69,6 +69,7 @@
       value: TRIP.expected_lead_value,
       currency: TRIP.currency,
       trip_price: TRIP.price,
+      expected_purchase_rate: TRIP.expected_purchase_rate,
       value_type: TRIP.expected_lead_value ? 'expected_revenue' : undefined
     });
   }
