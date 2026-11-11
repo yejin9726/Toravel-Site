@@ -116,6 +116,7 @@
     }
 
     if (el.id === 'cta-main') {
+      if (window.sendLeadLog) window.sendLeadLog();
       window.toravelTrack('cta_click', Object.assign(base, currentTrip(), {
         cta_type: 'application_start',
         link_target: 'survey'
