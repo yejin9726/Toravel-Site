@@ -124,6 +124,14 @@
       return;
     }
 
+    if (el.id === 'cta-survey-first') {
+      window.toravelTrack('cta_click', Object.assign(base, currentTrip(), {
+        cta_type: 'survey_first',
+        link_target: 'survey'
+      }));
+      return;
+    }
+
     if (el.id === 'cta-top' || el.getAttribute('href') === '#apply') {
       var ctaType = el.id === 'cta-top' ? 'apply_anchor' :
         text.indexOf('로그인') > -1 ? 'login' :

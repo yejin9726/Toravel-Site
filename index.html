@@ -58,7 +58,11 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
 .heart:focus-visible{outline:2px solid var(--point);outline-offset:3px}
 .heart i{font-style:normal;font-size:26px}
 .heart[aria-pressed="true"] i{transform:scale(1.08)}
-.apply-btn{flex:1;height:58px;border:0;border-radius:999px;background:var(--point);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+.cta-pair{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.28fr);gap:10px}
+.apply-btn,.survey-first-btn{min-height:58px;border-radius:999px;display:flex;align-items:center;justify-content:center;padding:10px 14px;text-align:center;font-size:14px;font-weight:600;line-height:1.35}
+.apply-btn{border:0;background:var(--point);color:#fff}
+.survey-first-btn{border:1.5px solid var(--point);background:#fff;color:#B94F3D}
+.apply-btn:focus-visible,.survey-first-btn:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
 .side .note{font-size:12.5px;color:var(--gray);margin:12px 4px 0}
 .side .safe-note{margin:12px 4px 0}
 /* 섹션 */
@@ -116,6 +120,9 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
   .journey-steps ol{grid-template-columns:1fr;gap:16px}
   .journey-steps li{padding:9px 12px}
   .journey-steps li:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}
+  .act{align-items:flex-start;gap:10px}
+  .cta-pair{grid-template-columns:1fr;gap:10px}
+  .apply-btn,.survey-first-btn{min-height:54px;font-size:15px}
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -218,7 +225,7 @@ body{font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;color:var
       <div class="price"><span>참가비</span><b>13만원</b></div>
       <form id="lead-form" action="survey.html" method="get" autocomplete="off" novalidate>
         <input type="hidden" name="trip" value="retro_hiking_11_14">
-        <div class="act"><button class="heart" type="button" id="favorite-toggle" aria-pressed="false" aria-label="레트로 등산복 입고 등산 여행 찜하기"><i aria-hidden="true">♡</i><span class="favorite-count">122</span></button><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button></div>
+        <div class="act"><button class="heart" type="button" id="favorite-toggle" aria-pressed="false" aria-label="레트로 등산복 입고 등산 여행 찜하기"><i aria-hidden="true">♡</i><span class="favorite-count">122</span></button><div class="cta-pair"><button class="apply-btn" type="submit" id="cta-main">이 여행 신청하기</button><a class="survey-first-btn" id="cta-survey-first" href="survey.html?trip=retro_hiking_11_14">3분 성향 설문 먼저 해보기</a></div></div>
       </form>
     </div>
     <p class="note">성향 설문 결과로 팀이 꾸려지면 OT 일정을 안내해 드려요.</p>
