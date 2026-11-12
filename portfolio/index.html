@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>[이름] 포트폴리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!--
+  빈 템플릿. [ ] 자리는 전부 내 내용으로 바꾼다. PDF 저장 전에 [ ]가 하나도 남으면 안 된다.
+  00 브랜드·전체 목표 / 01~03 콘텐츠 / 04~06 퍼포먼스 / 07~09 그로스 / 10 전체 결과.
+  장을 더 넣으려면 같은 축 section을 복사하고 번호를 다시 매긴다.
+  도구 배지 <span class="b">GA4</span> · 역량 배지 <span class="b skill">측정 설계</span>
+  숫자 출처 <span class="tag real">실측</span> <span class="tag assume">가정</span> <span class="tag none">미측정</span>
+-->
+<style>
+:root{--ink:#1d2124;--muted:#7b8389;--line:#d9dee2;--paper:#fff;--bg:#eceff1;
+--c:#b4532a;--c-bg:#fbeee7;--p:#1f5fa8;--p-bg:#e7f0fa;--g:#2f7d4f;--g-bg:#e6f4ec;
+--real:#1f6f43;--real-bg:#e3f3e9;--assume:#8a5a00;--assume-bg:#fbf0d9;--none:#6d7377;--none-bg:#eceeed}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181a}}
+:root[data-theme="dark"]{--bg:#15181a}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:9.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4 landscape;margin:0}
+.page{width:297mm;height:210mm;margin:12px auto;background:var(--paper);padding:11mm 13mm 9mm;display:flex;flex-direction:column;gap:6px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none;break-after:page}}
+@media screen and (max-width:900px){.page{width:auto;height:auto;margin:8px 0;padding:20px 16px}.row3,.row2,.top2{grid-template-columns:1fr !important}}
+.hd{display:flex;align-items:center;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.no{font-weight:900;font-size:20pt;line-height:1}
+.ax{font-size:8pt;font-weight:700;border-radius:3px;padding:1px 7px;white-space:nowrap}
+.ax.c{color:var(--c);background:var(--c-bg)}.ax.p{color:var(--p);background:var(--p-bg)}.ax.g{color:var(--g);background:var(--g-bg)}
+.ttl{font-size:14pt;font-weight:700;flex:1}
+.period{font-size:9pt;white-space:nowrap}
+.badges{display:flex;flex-wrap:wrap;gap:4px;font-size:7.5pt}
+.b{border:1px solid var(--ink);border-radius:10px;padding:0 7px;white-space:nowrap}
+.b.skill{background:var(--ink);color:#fff}
+.box{border:1px solid var(--line);border-radius:5px;padding:5px 8px;display:flex;flex-direction:column}
+.box>b{font-size:8pt;margin-bottom:2px}
+.box>div{flex:1}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.row2{display:grid;grid-template-columns:1.25fr 1fr;gap:6px}
+.top2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.s1{height:40mm}.s2{height:56mm}.s3{height:42mm}.s4{height:66mm}.s5{height:52mm}
+.tall td{height:11mm}
+table{width:100%;border-collapse:collapse;font-size:8pt}
+th,td{border:1px solid var(--line);padding:2px 6px;text-align:left;height:5.4mm}
+th{background:#f5f6f7;font-weight:500}
+.shot{border:1px dashed var(--line);border-radius:5px;flex:1;overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:contain}
+.tag{font-size:7pt;font-weight:700;border-radius:3px;padding:0 4px}
+.tag.real{color:var(--real);background:var(--real-bg)}.tag.assume{color:var(--assume);background:var(--assume-bg)}.tag.none{color:var(--none);background:var(--none-bg)}
+.ft{margin-top:auto;display:flex;justify-content:space-between;font-size:7pt;color:var(--muted);border-top:1px solid var(--line);padding-top:3px}
+</style></head><body>
+<section class="page">
+<div class="hd"><span class="no">00</span><span class="ttl">[브랜드명]</span><span class="period">[기간]</span></div>
+<div class="top2">
+ <div class="box s4"><b>브랜드</b><div></div></div>
+ <div class="box s4"><b>상황 분석</b><div></div></div>
+</div>
+<table><tr><th style="width:26%">전체 목표 (북극성 지표)</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<table class="tall"><tr><th style="width:14%">축</th><th>목표</th><th style="width:26%">핵심 지표</th><th style="width:14%">장표</th></tr>
+<tr><td><span class="ax c">콘텐츠</span></td><td></td><td></td><td></td></tr>
+<tr><td><span class="ax p">퍼포먼스</span></td><td></td><td></td><td></td></tr>
+<tr><td><span class="ax g">그로스</span></td><td></td><td></td><td></td></tr></table>
+<table class="tall"><tr><th style="width:26%">내 사이트</th><th>만든 방법</th><th>측정 연결</th><th>테스트한 것</th></tr><tr><td></td><td></td><td></td><td></td></tr></table>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>00</span></div></section><section class="page">
+<div class="hd"><span class="no">01</span><span class="ax c">콘텐츠</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>01</span></div></section><section class="page">
+<div class="hd"><span class="no">02</span><span class="ax c">콘텐츠</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>02</span></div></section><section class="page">
+<div class="hd"><span class="no">03</span><span class="ax c">콘텐츠</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>03</span></div></section><section class="page">
+<div class="hd"><span class="no">04</span><span class="ax p">퍼포먼스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>04</span></div></section><section class="page">
+<div class="hd"><span class="no">05</span><span class="ax p">퍼포먼스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>05</span></div></section><section class="page">
+<div class="hd"><span class="no">06</span><span class="ax p">퍼포먼스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>06</span></div></section><section class="page">
+<div class="hd"><span class="no">07</span><span class="ax g">그로스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>07</span></div></section><section class="page">
+<div class="hd"><span class="no">08</span><span class="ax g">그로스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>08</span></div></section><section class="page">
+<div class="hd"><span class="no">09</span><span class="ax g">그로스</span><span class="ttl">[프로젝트명]</span><span class="period">[기간]</span></div>
+<div class="badges"><span class="b">[도구]</span><span class="b">[도구]</span><span class="b">[도구]</span><span class="b skill">[역량]</span><span class="b skill">[역량]</span></div>
+<table><tr><th style="width:26%">핵심 지표</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<div class="row3">
+ <div class="box s1"><b>상황 분석</b><div></div></div>
+ <div class="box s1"><b>개선 목표</b><div></div></div>
+ <div class="box s1"><b>가설</b><div></div></div>
+</div>
+<div class="row2">
+ <div class="box s2"><b>실행</b><div></div></div>
+ <div class="box s2"><b>증거</b><div class="shot"></div></div>
+</div>
+<div class="row3">
+ <div class="box s3"><b>결과</b><div></div></div>
+ <div class="box s3"><b>재분석</b><div></div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>09</span></div></section><section class="page">
+<div class="hd"><span class="no">10</span><span class="ttl">전체 결과와 다음 목표</span><span class="period">[기간]</span></div>
+<table><tr><th style="width:26%">전체 목표 (북극성 지표)</th><th>시작</th><th>목표</th><th>결과</th><th style="width:14%">출처</th></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+<table><tr><th style="width:14%">축</th><th>결과</th><th>재분석</th></tr>
+<tr style="height:22mm"><td><span class="ax c">콘텐츠</span></td><td></td><td></td></tr>
+<tr style="height:22mm"><td><span class="ax p">퍼포먼스</span></td><td></td><td></td></tr>
+<tr style="height:22mm"><td><span class="ax g">그로스</span></td><td></td><td></td></tr></table>
+<div class="top2">
+ <div class="box s5"><b>지금 병목</b><div></div></div>
+ <div class="box s5"><b>다음 목표 예상</b><div></div></div>
+</div>
+<div class="box"><b>도구 · 역량</b><div class="badges" style="min-height:12mm"></div></div>
+<div class="ft"><span>[이름] · [브랜드명]</span><span>10</span></div></section>
+</body></html>
