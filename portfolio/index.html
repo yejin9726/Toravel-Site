@@ -37,6 +37,11 @@ th,td{border:1px solid var(--line);padding:2px 6px;text-align:left;height:5.4mm}
 th{background:#f5f6f7;font-weight:500}
 .shot{border:1px dashed var(--line);border-radius:5px;flex:1;overflow:hidden}
 .shot img{width:100%;height:100%;object-fit:contain}
+.shot.reel-evidence{padding:5px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:4px 8px}
+.shot.reel-evidence figure{margin:0;min-width:0;min-height:0;display:grid;grid-template-rows:auto 1fr;text-align:center}
+.shot.reel-evidence figcaption{font-size:7pt;font-weight:700}
+.shot.reel-evidence img{min-width:0;min-height:0;object-fit:contain}
+.shot.reel-evidence .report-source{grid-column:1/-1;font-size:7pt;text-align:right}
 .shot.crm-evidence{padding:5px;display:flex;flex-direction:column;gap:4px;overflow:visible}
 .shot.crm-evidence table{font-size:6.5pt;line-height:1.3}
 .shot.crm-evidence th,.shot.crm-evidence td{height:auto;padding:2px 3px}
@@ -88,7 +93,7 @@ th{background:#f5f6f7;font-weight:500}
 </div>
 <div class="row2">
  <div class="box s2"><b>실행</b><div>ad1은 고객의 혼잣말, ad2는 ‘가족도 친구도 여행 제안을 거절한다’는 상황으로 시작했다. 본문은 같게 두었다. 검은 배경에는 보는 사람의 모습이 비쳐 자기 이야기처럼 느낄 수 있기를 기대했고, 흰 글자로 가독성을 높였다. 두 편을 게시하고 같은 영상으로 광고를 집행했다.</div></div>
- <div class="box s2"><b>증거</b><div class="shot"><img src="img/reel-ad1-customer-voice-hook.png" alt=""><img src="img/reel-ad2-customer-situation-hook.png" alt=""><img src="img/meta-ads-creative-breakdown.png" alt=""></div></div>
+ <div class="box s2"><b>증거</b><div class="shot reel-evidence"><figure><figcaption>ad1 · 고객의 혼잣말</figcaption><img src="img/reel-ad1-customer-voice-hook.png" alt="ad1 고객의 혼잣말 첫 화면"></figure><figure><figcaption>ad2 · 고객의 상황 설명</figcaption><img src="img/reel-ad2-customer-situation-hook.png" alt="ad2 고객의 상황 설명 첫 화면"></figure><a class="report-source" href="img/meta-ads-creative-breakdown.png">광고별 보고서 캡처</a></div></div>
 </div>
 <div class="row3">
  <div class="box s3"><b>결과</b><div>ad1의 링크 클릭률이 0.86%p 높았다(실측값으로 계산). 게시물 자체의 인사이트 수치와 게시 링크는 모름.</div></div>
@@ -160,7 +165,7 @@ th{background:#f5f6f7;font-weight:500}
 </div>
 <div class="row2">
  <div class="box s2"><b>실행</b><div>CRM 6단계 중 재참여 시나리오를 설계했다. 관심 회차 모집일에 이메일을 보내고, 신청 이력이 없으면 최초 등록 15일째부터 발송 대상에 포함하도록 했다(가정, 운영 기준). 이메일을 클릭했지만 미신청 상태인 고객에게는 마감 1~2일 전 SMS를 보내고, 이탈 고객에게는 관심 회차 새 모집 소식을 이메일로 한 번 안내하도록 했다(가정, 운영 기준).</div></div>
- <div class="box s2"><b>증거</b><div class="shot crm-evidence"><table><tr><th>대상</th><th>발송 시점</th><th>채널</th><th>CTA</th></tr><tr><td>신청 이력이 없는 고객</td><td>관심 회차 모집일<br>최초 등록 15일째부터</td><td>이메일</td><td>관심 회차 신청</td></tr><tr><td>이메일 클릭 후 미신청 고객</td><td>마감 1~2일 전</td><td>SMS</td><td>신청</td></tr><tr><td>이탈 고객</td><td>관심 회차 새 모집 시 1회</td><td>이메일</td><td>새 모집 확인</td></tr></table><a href="https://docs.google.com/document/d/1-RnZQvriw99GzP6uATY0LOh_XJ5FixkMSTjPOwTKuMs/edit">Toravel 라이프사이클 CRM 운영 기준 원본</a></div></div>
+ <div class="box s2"><b>증거</b><div class="shot crm-evidence"><table><tr><th>대상</th><th>발송 시점</th><th>채널</th><th>CTA</th></tr><tr><td>모집 시작일에 휴면 상태이며 신청 가능한 고객. 신청 이력이 없는 고객은 최초 등록 후 15일째부터 대상에 포함</td><td>휴면 발송 조건을 충족한 뒤 첫 관심 회차 모집일</td><td>이메일</td><td>이번 회차 보기</td></tr><tr><td>이메일 클릭 후 미신청 고객</td><td>마감 1~2일 전</td><td>SMS</td><td>신청</td></tr><tr><td>이탈 고객</td><td>관심 회차 새 모집 시 1회</td><td>이메일</td><td>새 모집 확인</td></tr></table><a href="https://docs.google.com/document/d/1-RnZQvriw99GzP6uATY0LOh_XJ5FixkMSTjPOwTKuMs/edit">Toravel 라이프사이클 CRM 운영 기준 원본</a></div></div>
 </div>
 <div class="row3">
  <div class="box s3"><b>결과</b><div>대상·시점·채널·CTA가 담긴 설계표를 완성했다. 실제 발송과 테스트는 하지 않음. 반응 수치는 미측정.</div></div>
