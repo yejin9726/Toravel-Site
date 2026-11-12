@@ -20,7 +20,11 @@ body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,
 .ax{font-size:8pt;font-weight:700;border-radius:3px;padding:1px 7px;white-space:nowrap}
 .ax.c{color:var(--c);background:var(--c-bg)}.ax.p{color:var(--p);background:var(--p-bg)}.ax.g{color:var(--g);background:var(--g-bg)}
 .ttl{font-size:14pt;font-weight:700;flex:1}
+.ttl.with-role{display:flex;flex-direction:column;line-height:1.15}
+.ttl.with-role small{font-size:8pt;font-weight:700;color:var(--c);margin-top:2px}
 .period{font-size:9pt;white-space:nowrap}
+.portfolio-intro{font-size:8.5pt;font-weight:500;border-left:3px solid var(--c);background:var(--c-bg);padding:4px 8px}
+.page.overview .s4{height:57mm}
 .badges{display:flex;flex-wrap:wrap;gap:4px;font-size:7.5pt}
 .b{border:1px solid var(--ink);border-radius:10px;padding:0 7px;white-space:nowrap}
 .b.skill{background:var(--ink);color:#fff}
@@ -37,10 +41,17 @@ th,td{border:1px solid var(--line);padding:2px 6px;text-align:left;height:5.4mm}
 th{background:#f5f6f7;font-weight:500}
 .shot{border:1px dashed var(--line);border-radius:5px;flex:1;overflow:hidden}
 .shot img{width:100%;height:100%;object-fit:contain}
+.shot.landing-evidence{padding:5px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:4px 8px}
+.shot.landing-evidence figure{margin:0;min-width:0;min-height:0;display:grid;grid-template-rows:auto 1fr;text-align:center}
+.shot.landing-evidence figcaption{font-size:7pt;font-weight:700}
+.shot.landing-evidence img{min-width:0;min-height:0;object-fit:contain}
+.landing-meta{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;font-size:6.5pt;line-height:1.25}
+.landing-meta strong{color:var(--c)}
 .shot.reel-evidence{padding:5px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:4px 8px}
-.shot.reel-evidence figure{margin:0;min-width:0;min-height:0;display:grid;grid-template-rows:auto 1fr;text-align:center}
+.shot.reel-evidence figure{margin:0;min-width:0;min-height:0;display:grid;grid-template-rows:auto 1fr auto;text-align:center}
 .shot.reel-evidence figcaption{font-size:7pt;font-weight:700}
 .shot.reel-evidence img{min-width:0;min-height:0;object-fit:contain}
+.shot.reel-evidence .hook-copy{font-size:6.3pt;line-height:1.25;margin:2px 0 0}
 .shot.reel-evidence .report-source{grid-column:1/-1;font-size:7pt;text-align:right}
 .shot.crm-evidence{padding:5px;display:flex;flex-direction:column;gap:4px;overflow:visible}
 .shot.crm-evidence table{font-size:6.5pt;line-height:1.3}
@@ -52,8 +63,9 @@ th{background:#f5f6f7;font-weight:500}
 .tag.real{color:var(--real);background:var(--real-bg)}.tag.assume{color:var(--assume);background:var(--assume-bg)}.tag.none{color:var(--none);background:var(--none-bg)}
 .ft{margin-top:auto;display:flex;justify-content:space-between;font-size:7pt;color:var(--muted);border-top:1px solid var(--line);padding-top:3px}
 </style></head><body>
-<section class="page">
-<div class="hd"><span class="no">00</span><span class="ttl">Toravel</span><span class="period">2026.09.15~11.10</span></div>
+<section class="page overview">
+<div class="hd"><span class="no">00</span><span class="ttl with-role"><span>Toravel</span><small>콘텐츠 마케팅 포트폴리오</small></span><span class="period">2026.09.15~11.10</span></div>
+<div class="portfolio-intro">같이 여행 갈 사람이 없다는 고민을 릴스의 첫 문장에 담고, 혼자 신청해도 괜찮을지에 대한 답을 랜딩의 첫 화면에 배치했습니다.</div>
 <div class="top2">
  <div class="box s4"><b>브랜드</b><div>국내 콘셉트 여행을 먼저 고르고, 여행 성향이 비슷한 사람들과 떠날 수 있도록 기획한 가상 브랜드. 하고 싶은 여행은 있지만 같이 갈 지인이 없거나, 낯선 사람과 여행하는 게 걱정되는 2030을 떠올렸다.</div></div>
  <div class="box s4"><b>상황 분석</b><div>브랜드와 채널을 처음부터 설계했다. 같이 갈 사람을 찾기 어렵다는 점과, 모르는 사람과 여행할 때 여행 방식이 맞을지 불안하다는 점을 고객의 주요 장벽으로 봤다.</div></div>
@@ -75,7 +87,7 @@ th{background:#f5f6f7;font-weight:500}
 </div>
 <div class="row2">
  <div class="box s2"><b>실행</b><div>광고와 랜딩의 연결을 점검했다. 첫 화면에 ‘같이 갈 사람이 없어도 괜찮아요’와 매칭 절차를 배치하고, 신청 버튼 옆에 ‘3분 성향 설문 먼저 해보기’를 추가했다.</div></div>
- <div class="box s2"><b>증거</b><div class="shot"><img src="img/retro-hiking-landing-before.png" alt=""><img src="img/retro-hiking-landing-after.png" alt=""><img src="img/retro-hiking-matching-details-before.png" alt=""></div></div>
+ <div class="box s2"><b>증거</b><div class="shot landing-evidence"><figure><figcaption>수정 전</figcaption><img src="img/retro-hiking-landing-before.png" alt="레트로 등산 랜딩 수정 전"></figure><figure><figcaption>수정 후</figcaption><img src="img/retro-hiking-landing-after.png" alt="레트로 등산 랜딩 수정 후"></figure><div class="landing-meta"><span>수정 후: ① 매칭 안내를 첫 화면에 배치 ② 신청 전 설문 체험 버튼 추가</span><strong>후기·별점은 실습용 예시</strong><a href="img/retro-hiking-matching-details-before.png">수정 전 상세 절차 보기</a></div></div></div>
 </div>
 <div class="row3">
  <div class="box s3"><b>결과</b><div>첫 화면에서 매칭 안내와 설문 체험 버튼을 확인할 수 있다. 수정 전후 전환율 변화는 미측정.</div></div>
@@ -93,12 +105,12 @@ th{background:#f5f6f7;font-weight:500}
 </div>
 <div class="row2">
  <div class="box s2"><b>실행</b><div>ad1은 고객의 혼잣말, ad2는 ‘가족도 친구도 여행 제안을 거절한다’는 상황으로 시작했다. 본문은 같게 두었다. 검은 배경에는 보는 사람의 모습이 비쳐 자기 이야기처럼 느낄 수 있기를 기대했고, 흰 글자로 가독성을 높였다. 두 편을 게시하고 같은 영상으로 광고를 집행했다.</div></div>
- <div class="box s2"><b>증거</b><div class="shot reel-evidence"><figure><figcaption>ad1 · 고객의 혼잣말</figcaption><img src="img/reel-ad1-customer-voice-hook.png" alt="ad1 고객의 혼잣말 첫 화면"></figure><figure><figcaption>ad2 · 고객의 상황 설명</figcaption><img src="img/reel-ad2-customer-situation-hook.png" alt="ad2 고객의 상황 설명 첫 화면"></figure><a class="report-source" href="img/meta-ads-creative-breakdown.png">광고별 보고서 캡처</a></div></div>
+ <div class="box s2"><b>증거</b><div class="shot reel-evidence"><figure><figcaption>ad1 · 고객의 혼잣말</figcaption><img src="img/reel-ad1-customer-voice-hook.png" alt="ad1 고객의 혼잣말 첫 화면"><p class="hook-copy">‘계속 바쁘다가 이제서야 시간이 났는데 같이 여행 갈 사람이 없네…’</p></figure><figure><figcaption>ad2 · 고객의 상황 설명</figcaption><img src="img/reel-ad2-customer-situation-hook.png" alt="ad2 고객의 상황 설명 첫 화면"><p class="hook-copy">‘가족도 친구도 여행 제안을 거절한다는 사람을 위한 꿀팁…’</p></figure><a class="report-source" href="img/meta-ads-creative-breakdown.png">광고별 보고서 캡처</a></div></div>
 </div>
 <div class="row3">
- <div class="box s3"><b>결과</b><div>ad1의 링크 클릭률이 0.86%p 높았다(실측값으로 계산). 게시물 자체의 인사이트 수치와 게시 링크는 모름.</div></div>
- <div class="box s3"><b>재분석</b><div>짧은 집행 기간과 적은 예산, 소재별 노출·지출 차이가 있었다. 실제 집행에서 관찰한 차이로 해석했다.</div></div>
- <div class="box s3"><b>다음 목표 예상</b><div>2030 직장인의 구체적인 여행 상황을 소재로 삼아, 같은 상황을 혼잣말과 상황 설명으로 각각 표현한다. 본문과 집행 조건을 맞춘 A/B 테스트에서 링크 클릭률을 비교한다. 수치 목표는 미설정.</div></div>
+ <div class="box s3"><b>결과</b><div>ad1 광고 링크 클릭률은 5.79%, ad2 광고 링크 클릭률은 4.93%(실측값으로 계산)였다. ad1이 0.86%p 높았다. 게시물 자체의 인사이트 수치와 게시 링크는 모름.</div></div>
+ <div class="box s3"><b>재분석</b><div>소재별 노출과 지출이 달랐고, 첫 문장의 말투와 상황도 함께 달라졌다. 실제 집행에서 관찰한 차이로 해석했다.</div></div>
+ <div class="box s3"><b>다음 목표 예상</b><div>같은 2030 직장인 상황을 두 말투로 표현하고, 영상 본문과 집행 조건을 맞춰 링크 클릭률을 비교한다. 수치 목표는 미설정.</div></div>
 </div>
 <div class="ft"><span>최예진 · Toravel</span><span>02</span></div></section><section class="page">
 <div class="hd"><span class="no">03</span><span class="ax p">퍼포먼스</span><span class="ttl">여행·등산 관심사를 반영해 레트로 등산 랜딩으로 유료 트래픽 유도</span><span class="period">2026.10.29 광고 세팅, 실적 집계 2026.11.02~11.10</span></div>
@@ -114,7 +126,7 @@ th{background:#f5f6f7;font-weight:500}
  <div class="box s2"><b>증거</b><div class="shot"><img src="img/meta-ads-overview.png" alt=""><img src="img/meta-ads-creative-breakdown.png" alt=""></div></div>
 </div>
 <div class="row3">
- <div class="box s3"><b>결과</b><div>37,270원 지출, 노출 3,895회, 링크 클릭 204회(실측). 집행 연장 후 노출과 클릭이 증가하는 것을 확인했다.</div></div>
+ <div class="box s3"><b>결과</b><div>11월 2~10일 · 지출 37,270원 · 링크 클릭 204회(실측). 노출은 3,895회였고, 집행 연장 후 노출과 클릭이 증가하는 것을 확인했다.</div></div>
  <div class="box s3"><b>재분석</b><div>링크 클릭으로 광고 반응을 확인했다. 소재별 클릭이 신청 후 설문 제출로 이어졌는지 판단할 연결 데이터는 부족했다.</div></div>
  <div class="box s3"><b>다음 목표 예상</b><div>다음 집행 전 소재별 UTM과 제출 이벤트를 검증하고, 광고 유입 세션의 신청 후 설문 완료율 3.0%(가정)를 확인한다.</div></div>
 </div>
@@ -128,7 +140,7 @@ th{background:#f5f6f7;font-weight:500}
  <div class="box s1"><b>가설</b><div>사이트 측정 도구를 연결하고 광고 링크에 UTM을 붙이면 방문 경로와 이후 행동을 함께 확인할 수 있을 것이다.</div></div>
 </div>
 <div class="row2">
- <div class="box s2"><b>실행</b><div>10월 28일 GA4·GTM·Meta 픽셀을 연결했다. 29일 Meta 광고 링크에 UTM을 적용했다. 설문을 사이트에 추가할 때 GA4 이벤트와 설문 관련 맞춤 측정기준을 설정했고, 11월 5일에는 가치 유형을 설정했다. 직접 접속해 페이지 이동과 설문 제출까지 시험했다.</div></div>
+ <div class="box s2"><b>실행</b><div>10월 28일 GA4·GTM·Meta 픽셀을 연결했다. 29일 Meta 광고 링크에 소재별 UTM을 설정했다. 설문을 사이트에 추가할 때 GA4 이벤트와 설문 관련 맞춤 측정기준을 설정했고, 집행 중인 11월 5일에는 가치 유형을 설정했다. GA4 실시간에서 직접 방문이 <code>direct</code>로 잡히는지 확인하고 페이지 이동과 설문 제출까지 시험했다.</div></div>
  <div class="box s2"><b>증거</b><div class="shot"><img src="img/ga4-custom-dimensions.png" alt=""></div></div>
 </div>
 <div class="row3">
@@ -150,8 +162,8 @@ th{background:#f5f6f7;font-weight:500}
  <div class="box s2"><b>증거</b><div class="shot"><img src="img/meta-ga4-dashboard.png" alt=""></div></div>
 </div>
 <div class="row3">
- <div class="box s3"><b>결과</b><div>랜딩 조회 155회, 조회당 비용 207원, 지출 32,117원(실측 또는 실측값으로 계산). 아웃바운드 CTR은 5.10%(실측, 169클릭 ÷ 3,312노출)로 목표 1.0%(가정)를 넘었다. 일부 UTM으로 매칭된 GA4 세션은 8회(실측). 설문 완료율은 미측정(목표 3.0%, 가정), 추정 ROAS는 미측정(목표 616%, 가정).</div></div>
- <div class="box s3"><b>재분석</b><div>유입 비용과 클릭 반응을 확인했지만 랜딩 이후 행동을 설명할 데이터가 부족했다. Meta 랜딩 조회와 GA4 세션은 집계 단위가 다르다. 11월 10일까지 집계한 Meta 전체 보고서는 기간과 클릭 지표가 다르다.</div></div>
+ <div class="box s3"><b>결과</b><div>11월 2~9일 · 랜딩 페이지 조회 155회 · 조회당 비용 207원(실측 또는 실측값으로 계산). 지출은 32,117원, 아웃바운드 CTR은 5.10%(실측, 169클릭 ÷ 3,312노출), 일부 UTM으로 매칭된 GA4 세션은 8회(실측)였다. 설문 완료율은 미측정(목표 3.0%, 가정), 추정 ROAS는 미측정(목표 616%, 가정).</div></div>
+ <div class="box s3"><b>재분석</b><div>소재별 설문 제출까지 확인하려면 추가 검증이 필요했다. Meta 랜딩 조회와 GA4 세션은 집계 단위가 다르므로 두 숫자의 차이를 누락 건수로 계산하지 않았다. 11월 10일까지 집계한 Meta 전체 보고서는 기간과 클릭 지표가 다르다.</div></div>
  <div class="box s3"><b>다음 목표 예상</b><div>소재별 UTM과 제출 이벤트를 집행 전 검증하고 광고 유입 세션의 설문 완료율 3.0%(가정)를 확인한다.</div></div>
 </div>
 <div class="ft"><span>최예진 · Toravel</span><span>05</span></div></section><section class="page">
@@ -164,7 +176,7 @@ th{background:#f5f6f7;font-weight:500}
  <div class="box s1"><b>가설</b><div>관심 회차의 모집 시작에 맞춰 정보를 보내고, 클릭한 미신청 고객에게 마감 정보를 알려주면 재신청을 유도할 수 있을 것이다.</div></div>
 </div>
 <div class="row2">
- <div class="box s2"><b>실행</b><div>CRM 6단계 중 재참여 시나리오를 설계했다. 관심 회차 모집일에 이메일을 보내고, 신청 이력이 없으면 최초 등록 15일째부터 발송 대상에 포함하도록 했다(가정, 운영 기준). 이메일을 클릭했지만 미신청 상태인 고객에게는 마감 1~2일 전 SMS를 보내고, 이탈 고객에게는 관심 회차 새 모집 소식을 이메일로 한 번 안내하도록 했다(가정, 운영 기준).</div></div>
+ <div class="box s2"><b>실행</b><div>CRM 6단계 중 재참여 시나리오를 설계했다. 첫 이메일에서 신청 이력이 있는 고객에게는 새 일정과 변경점, 신청 이력이 없는 고객에게는 첫 참여 절차를 안내하도록 했다. 관심 회차 모집일에 이메일을 보내고, 신청 이력이 없으면 최초 등록 15일째부터 발송 대상에 포함하도록 했다(가정, 운영 기준). 이메일을 클릭했지만 미신청 상태인 고객에게는 마감 1~2일 전 SMS를 보내고, 이탈 고객에게는 관심 회차 새 모집 소식을 이메일로 한 번 안내하도록 했다(가정, 운영 기준).</div></div>
  <div class="box s2"><b>증거</b><div class="shot crm-evidence"><table><tr><th>대상</th><th>발송 시점</th><th>채널</th><th>CTA</th></tr><tr><td>모집 시작일에 휴면 상태이며 신청 가능한 고객. 신청 이력이 없는 고객은 최초 등록 후 15일째부터 대상에 포함</td><td>휴면 발송 조건을 충족한 뒤 첫 관심 회차 모집일</td><td>이메일</td><td>이번 회차 보기</td></tr><tr><td>이메일 클릭 후 미신청 고객</td><td>마감 1~2일 전</td><td>SMS</td><td>신청</td></tr><tr><td>이탈 고객</td><td>관심 회차 새 모집 시 1회</td><td>이메일</td><td>새 모집 확인</td></tr></table><a href="https://docs.google.com/document/d/1-RnZQvriw99GzP6uATY0LOh_XJ5FixkMSTjPOwTKuMs/edit">Toravel 라이프사이클 CRM 운영 기준 원본</a></div></div>
 </div>
 <div class="row3">
@@ -181,7 +193,7 @@ th{background:#f5f6f7;font-weight:500}
 <tr style="height:22mm"><td><span class="ax g">그로스</span></td><td>통합 보고서(11월 2~9일)에서 랜딩 조회 155회와 조회당 비용 207원(실측 또는 실측값으로 계산)을 확인했다. 일부 UTM 매칭 세션은 8회(실측)였다.</td><td>CRM 재참여 시나리오는 설계했고 실제 발송은 하지 않았다.</td></tr></table>
 <div class="top2">
  <div class="box s5"><b>지금 병목</b><div>소재별 광고 유입과 신청 후 설문 제출을 연결해 집계할 수 있는지 검증이 부족했다. 신청 전 체험과 신청 후 제출도 구분해서 확인해야 한다.</div></div>
- <div class="box s5"><b>다음 목표 예상</b><div>집행 전 ad1·ad2 UTM 유입과 신청 후 제출을 각각 테스트하고, 소재 식별과 중복 없는 완료 수집을 확인한다. 집행 후 신청 후 제출이 발생한 광고 유입 세션을 광고 유입 랜딩 세션으로 나눠 완료율 3.0%(가정)를 첫 판단 기준으로 삼는다. 수집이 확인되면 릴스 첫 문장 A/B 테스트를 진행한다.</div></div>
+ <div class="box s5"><b>다음 목표 예상</b><div>다음 집행 목표는 광고 유입 세션 기준 설문 완료율 3.0%(가정)이다. 집행 전 두 소재의 UTM과 제출 이벤트 검증 → 집행 후 완료율 확인 → 후속 소재 A/B 테스트 순서로 진행한다. 신청 전 체험 설문과 신청 후 제출을 구분하고, 소재 식별과 중복 없는 완료 수집을 확인한다.</div></div>
 </div>
 <div class="box"><b>도구 · 역량</b><div class="badges" style="min-height:12mm"><span class="b">Codex</span><span class="b">GitHub Pages</span><span class="b">Instagram</span><span class="b">Meta 광고 관리자</span><span class="b">GA4</span><span class="b">GTM</span><span class="b">Meta 픽셀</span><span class="b">Google Data Studio</span><span class="b">Google Docs</span><span class="b skill">콘텐츠 기획</span><span class="b skill">랜딩 개선</span><span class="b skill">숏폼 기획</span><span class="b skill">카피 제작</span><span class="b skill">타기팅</span><span class="b skill">광고 운영</span><span class="b skill">측정 설계</span><span class="b skill">데이터 검증</span><span class="b skill">대시보드 구성</span><span class="b skill">지표 해석</span><span class="b skill">CRM 설계</span><span class="b skill">고객 여정 설계</span></div></div>
 <div class="ft"><span>최예진 · Toravel</span><span>07</span></div></section>
